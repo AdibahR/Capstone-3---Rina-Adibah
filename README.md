@@ -94,14 +94,40 @@ Penjual dan pembeli rumah menghadapi tantangan dalam menentukan harga pasar yang
 - Model memiliki keterbatasan dalam memprediksi harga di luar rentang dataset (14,999 hingga 433,800).
 
 ### **2. Recommendation**
-- **Untuk Bisnis Properti:**
-  - Fokus pada pengembangan di area `INLAND` karena harga lebih stabil.
-  - Tambahkan fasilitas di area dekat pantai (`<1H OCEAN`) untuk meningkatkan nilai properti.
-- **Untuk Pengembangan Model:**
-  - Gunakan dataset properti terbaru untuk mencerminkan kondisi pasar terkini.
-  - Tambahkan fitur relevan seperti luas tanah, fasilitas rumah, dan aksesibilitas lokasi.
+#### a. Success Metric: Hubungan dengan Evaluation Metric
+- Fokus pengembangan pada rentang harga tinggi dengan menargetkan pengurangan MAE sebesar 20%.
+- Terapkan model tambahan seperti **CatBoost** untuk meningkatkan akurasi prediksi.
+- Tambahkan fitur properti seperti luas tanah dan fasilitas rumah.
+
+#### b. Feature Importance Analysis
+- Tambahkan fitur geografis dan aksesibilitas fasilitas umum untuk meningkatkan prediksi.
+- Gunakan data enrichment dari sumber eksternal seperti GIS.
+
+#### c. Dataset
+- Gunakan data properti yang lebih baru (2020 atau lebih).
+- Tambahkan fitur seperti indeks harga properti, risiko bencana, dan kualitas lingkungan.
+
+#### d. Stakeholder
+- **Bagi Pembeli:** Fokus pembelian di area `INLAND` untuk stabilitas harga.
+- **Bagi Penjual:** Tambahkan fasilitas untuk meningkatkan nilai properti di area `NEAR OCEAN`.
 
 ---
 
-## **F. Save Model**
+## **F. Limitasi Penelitian**
+
+### **1. Limitasi Dataset**
+- Dataset berasal dari sensus tahun 1990, yang tidak mencerminkan kondisi pasar saat ini.
+- Tidak ada fitur properti mendetail seperti luas tanah atau aksesibilitas fasilitas.
+
+### **2. Limitasi Model**
+- Model XGBoost tidak optimal dalam ekstrapolasi harga di luar rentang dataset.
+- Kesalahan prediksi signifikan pada harga tinggi di atas $314,000.
+
+### **3. Limitasi Penelitian**
+- Tidak semua fitur relevan dieksplorasi atau tersedia dalam dataset.
+- Masih ada ruang untuk pengayaan fitur dan tuning parameter lebih lanjut.
+
+---
+
+## **G. Save Model**
 Model XGBoost yang telah dituning disimpan menggunakan library **pickle** untuk digunakan dalam implementasi lebih lanjut.
