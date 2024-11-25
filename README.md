@@ -61,8 +61,6 @@ Penjual dan pembeli rumah menghadapi tantangan dalam menentukan harga pasar yang
 - Fitur baru ditambahkan:
   - `bedrooms_per_room`: Rasio kamar tidur terhadap total ruangan.
   - `population_per_household`: Rasio populasi terhadap rumah tangga.
-- Fitur yang dihapus:
-  - `total_bedrooms` dan `population` karena kontribusinya rendah.
 
 ---
 
