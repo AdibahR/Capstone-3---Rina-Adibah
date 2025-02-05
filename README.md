@@ -1,4 +1,4 @@
-# CapstoneProjectModule3 - California Housing Prices
+# California Housing Prices
 ## Capstone Project Module 3 - [Rina Adibah]
 
 ---
